@@ -1,0 +1,277 @@
+javascript - anotações
+
+aula 5
+
+abrir novo terminal (ctrl + shift + `)
+node : para abrir o nodejs no terminal
+
+declarar variável:
+var n = 2
+
+tipos primitivos:
+number
+	infinity
+	NaN (not a number)
+string
+boolean
+null
+undefined
+object
+	array
+function
+
+typeof: comando para saber o tipo de variável
+
+
+aula 6
+
+concatenação usa-se + igual ao java
+ex.: window.alert('É um prazer te conhecer, ' + nome + '!!')
+na versão mais nova do js pode concatenar dessa forma (template strings):
+window.alert(`É um prazer te conhecer, ${nome}!!`)
+
+manipulação de dados
+
+conversão de string para número
+como usa-se + para adição e concatenação, quando o js recebe o valor de um prompt, recebe string, tem que converter o tipo de string para number.
+comandos:
+Number.parseInt(n): força o número a ser inteiro
+Number.parseFloat(n): força o número a ser decimal
+Number(n): o js decide se é inteiro ou decimal
+
+conversão de número para string:
+String(n)
+n.toString()
+
+s.length // quantos caracteres a string tem
+s.toUpperCase() // tudo para MAIÚSCULAS
+s.toLowerCase() // tudo para minúsculas
+
+alguns comandos basicos:
+document.write : aparece na parte do site
+<h2> : faz título
+<strong> </strong> : faz ficar em negrito
+<br/> : break role ou quebra de linha
+
+tratando floats:
+n.toFixed(2) : o float passa a ter 2 casas decimais
+n.toFixed(2).replace('.', ',') : comando/macete para trocar . por ,
+n.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'}) : para mostrar em formato/estilo de representação da moeda Real no Brasil
+
+CSS
+<style> </style>
+
+JS
+<script> </script>
+
+
+aula 7
+
+operadores:
+aritméticos
+	5 + 2 = 7 (adição)
+	5 - 2 = 3 (subtração)
+	5 * 2 = 10 (multiplicação)
+	5 / 2 = 2.5 (divisão)
+	5 % 2 = 1 (resto da divisão inteira)
+	5 ** 2 = 25 (potência)
+	ordem de precedência: 
+		1 - () 
+		2 - ** 
+		3 - * ou / ou % (quem aparecer primeiro)
+		4 - + ou - (quem aparecer primeiro)
+atribuição
+	simples
+		var n = 3
+	auto-atribuições
+		n = n + 4 ou n += 4
+		n = n - 5 ou n -= 5
+		n = n * 4 ou n *= 4
+		n = n / 2 ou n /= 2
+		n = n ** 2 ou n **= 2
+		n = n % 5 ou n %= 5
+incremento
+	var x = 5
+	x = x + 1 ou x += 1 ou x++
+		
+
+
+aula 8
+
+operadores:
+relacionais
+	expressões em que o resultado sempre será um valor booleano
+	maior que: 5 > 2 -> true
+	menor que: 7 < 4 -> false
+	maior ou igual: 8 >= 8 -> true
+	menor ou igual: 9 <= 7 -> false
+	igual: 5 == 5 -> true
+	não igual: 4 != 4 -> false
+	operador de igualdade restrita, testa se tem o mesmo valor e mesmo tipo: 5 ==='5' -> true
+
+lógicos
+	expressões em que o resultado sempre será um valor booleano
+	! (not): negação
+	&& (and): conjunção
+	|| (or): disjunção 
+	ordem de precedência: not (!) - and (&&) - or (||)
+
+ordem de precedência em uma expressão: aritméticos - relacionais - lógicos
+
+ternário
+	?
+	:
+	existem 3 blocos: 
+		teste ? true : false
+		exemplo:
+			var media >= 7.0 ? "Aprovado" : "Reprovado"
+			var r = idade >= 18 ? "Maior" : "Menor"
+		
+aula 9
+introdução ao DOM
+DOM: Document Object Model
+árvore DOM
+
+                    window
+              /        |        \
+           location document history
+                       |
+                      html
+               /            \
+            head            body
+            /  |         /  |  |  \
+         meta title     h1 p   p div
+                                |
+                           strong
+
+baixando live server no lugar do watch in chrome (que não existe mais)
+DOM está presente no JS quando está rodando dentro do navegador
+window: raiz. tudo que está no js se localiza dentro do window
+dentro do document, está o html
+html é parent de head e body. head e body são child de html. html é child de document.
+árvore hierárquica
+<h1></h1>
+<p></p>
+<p><strong></strong></p>
+<div></div>
+você pode acessar elementos da sua árvore DOM no script do js por exemplo
+5 métodos de acesso aos elementos da sua árvore DOM:
+- por Marca (TagName):
+	getElementsByTagName()
+	Exemplo: com o que está escrito na aula05.html você pode mostrar na tela o primeiro parágrafo: 
+		var p1 = window.document.getElementsByTagName('p')[0]
+        	window.document.write('Está escrito assim: ' + p1.innerText)
+	Exemplo 2: ou mesmo mudar o estilo do primeiro parágrafo:
+		var p1 = window.document.getElementsByTagName('p')[0]
+		p1.style.color = 'blue'
+	Exemplo 3: pode mudar a cor de fundo do seu site
+		var corpo = window.documente.body
+		corpo.style.background = 'black'
+- por ID
+	getElementById()
+	Exemplo: pode mudar a cor do background da div 
+		<div id = 'msg'>
+		var d = window.document.getElementById('msg')
+		d.style.background = 'green'
+	Exemplo 2: mudar o que está escrito originalmente no div do html
+		d.innerText = 'Estou aguardando...' 
+- por Nome
+	Exemplo: mudar o que está escrito originalmente no div do html
+		<div name = 'msg'>
+		var d = window.document.getElementsByName('msg')[0]
+		d.innerText = 'Olá!'
+- por Classe
+	Exemplo: mudar o que está escrito originalmente no div do html
+		<div class = 'msg'>
+		var d = window.document.getElementsByClassName('msg')[0]
+		d.innerText = 'Hello'	
+- por Seletor (CSS)
+	querySelector é um método mais recente. 
+	para id: #
+	para class: .
+	Exemplo com id:
+		<div id = 'msg'>
+		var d = window.document.querySelector('div#msg')
+		d.style.background = 'blue'
+	Exemplo com class:
+		<div class = 'msg'>
+		var d = window.document.querySelector('div.msg')
+		d.style.background = 'blue'
+
+aula 10
+eventos DOM
+é tudo que possa acontecer. os mais comuns são eventos de mouse. 
+Exemplo: 
+criar uma id área na div
+<div id = 'area'>
+ir no CSS e definir uma área para a div
+    <style>
+        div#area{
+            font: normal 20pt Arial;
+            background: green;
+            color: white;
+            width: 200px;
+            height: 200px;
+            line-height: 200px;
+            text-align: center;
+        }
+    </style>
+eventos com mouse:
+mouseenter: quando entra na área definida na div
+mousemove: movendo o mouse dentro da área definida na div
+mousedown: clicou o mouse dentro da área definida na div
+mouseup: no momento que para de apertar o botão do mouse
+click: movimento do clique inteiro rapidamente
+mouseout: momento que o mouse sai da área definida na div
+
+function ação(parâmetros) {
+}
+função é o conjunto de linhas que serão executadas só quando o evento correr
+quando o evento ocorrer o bloco {} é executado
+Exemplo:
+No <body> no HTML:
+<body>
+    <!-- Comentário em HTML -->
+    <div id = 'area' onclick="clicar()" onmouseenter="entrar()" onmouseout="sair()">
+        Interaja...
+    </div>
+    <script>
+        var a = window.document.getElementById('area')
+        function clicar() {        
+            a.innerText = 'Clicou!'
+            a.style.background = 'red'
+        }
+        function entrar() {
+            a.innerText = 'Entrou!'
+        }
+        function sair() {
+            a.innerText = 'Saiu!'
+            a.style.background = 'green'
+        }
+    </script>
+Sem usar o body do HTML, fazendo tudo no JS:
+<body>
+    <div id = 'area'>
+        Interaja...
+    </div>
+    <script>
+        var a = window.document.getElementById('area')
+        a.addEventListener('click', clicar)
+        a.addEventListener('mouseenter', entrar)
+        a.addEventListener('mouseout', sair)
+        function clicar() {        
+            a.innerText = 'Clicou!'
+            a.style.background = 'red'
+        }
+        function entrar() {
+            a.innerText = 'Entrou!'
+        }
+        function sair() {
+            a.innerText = 'Saiu!'
+            a.style.background = 'green'
+        }
+    </script>
+
+No navegador - Inspecionar - ... - undock
+usado para detecção de erros
+			

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cidadania</title>
+</head>
+<body>
+    <h1>Cidadão...</h1>
+    Qual país você vive? <input type="text" name="txtpais" id="txtpais">
+    <input type="button" value="Situação" onclick="situacao()">
+    <div id="res"></div>
+    <script>
+        function situacao() {
+            var txtp = window.document.querySelector('input#txtpais')
+            var res = window.document.querySelector('div#res')
+            res.innerHTML = `<p>Vivendo em <strong>${txtp.value}</strong>, você é: </p>`
+
+            if (txtp.value == 'Brasil') {
+                res.innerHTML += `<p> Brasileiro(a)!! </p>`
+            } else {
+                res.innerHTML += `<p> Estrangeiro(a)!! </p>`
+            }
+        }
+    </script>
+</body>
+</html>

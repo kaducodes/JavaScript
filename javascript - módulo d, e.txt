@@ -1,0 +1,136 @@
+módulo d
+aula 11
+condições simples
+	if (condição) {
+		true
+	}
+
+condições compostas
+	if (condição) {
+		true
+	} else {
+		false
+	}
+
+aula 12
+condições aninhadas
+	if (condição 1) {
+		bloco 1
+	} else {
+		if (condição 2) {
+			bloco 2
+		} else {
+			bloco 3
+		}
+	}
+
+condições múltiplas
+	switch (expressão) {
+		case valor 1:
+			bloco 1
+			break
+		case valor 2:
+			bloco 2
+			break
+		case valor 3:
+			bloco 3
+			break
+		default:
+			bloco 4
+			break
+	}
+
+comando para pegar a hora do sistema que o programa está rodando:
+var agora = new Date()
+var hora = agora.getHours()
+
+exercícios propostos
+
+estrutura de um site para ajustar no html/css/js:
+body: corpo do site
+header: título
+section: parte do meio
+div: divisões com conteúdos contidas na section
+footer: rodapé
+
+documento modelo:
+html: 
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modelo de Exercício</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+    <header>
+        <h1>Título</h1>
+    </header>
+    <section>
+        <div>
+            Testando...
+        </div>
+        <div>
+            Olá!
+        </div>
+    </section>
+    <footer>
+        <p>&copy; CursoemVideo</p>
+    </footer> 
+    <script src="script.js"></script>   
+</body>
+</html>
+
+css:
+body {
+    background: rgb(103, 103, 247);
+    font: normal 15pt Arial;
+}
+
+header {
+    color: white;
+    text-align: center;
+}
+
+section {
+    background: white;
+    border-radius: 10px;
+    padding: 15px;
+    width: 500px;
+    margin: auto;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.363);
+}
+
+footer {
+    color: white;
+    text-align: center;
+    font-style: italic;
+}
+
+baixar fotos para site em um banco de imagens gratuito:
+www.pexels.com/pt-br
+
+módulo e
+repetições em javascript
+while: teste lógico no início
+	while (condição para se manter no laço) {
+		bloco
+	}
+
+do while: teste lógico no final
+	do {
+		bloco
+	} while (condição para se manter no laço) 
+
+for: variável de controle
+faz 3 coisas: inicialização, teste lógico e um incremento
+	for (início;teste;incremento) {
+		bloco
+	}
+
+*aula 14 explica sobre debug (depuração), se precisar, voltar a assistir.
+
+
+
+

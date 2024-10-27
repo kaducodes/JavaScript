@@ -131,6 +131,20 @@ faz 3 coisas: inicialização, teste lógico e um incremento
 
 *aula 14 explica sobre debug (depuração), se precisar, voltar a assistir.
 
+módulo f
+variáveis compostas
+vetor (array em inglês)
+elementos: espaço nos vetores
+índice/chave: identificação dos elementos
+
+declaração:
+	var num = []
+
+declaração com elementos:
+	var num = [5, 8, 4]
+
+
+
 
 
 

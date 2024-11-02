@@ -12,14 +12,16 @@
     </header>
     <section id="numero">
         <div>
-            <label>Número (entre 1 a 100): </label>
-            <input type="text" id="caixaNumero">
-            <button type="submit" onclick="lista()">Adicionar</button>
+            <label for="caixaNumero">Número (entre 1 a 100): </label>
+            <input type="number" id="caixaNumero">
+            <button onclick="lista()">Adicionar</button>
         </div>
         <div>
-            <select name="lista" id="lista" class="lista"></select>
-            <button type="submit" onclick="finalizar()">Finalizar</button>
+            <select id="lista" size="5" class="lista"></select>
+            <button onclick="finalizar()">Finalizar</button>
+            <p id="res"></p>
         </div>
+
     </section>
     <footer>
         <p>&copy; CursoemVideo</p>

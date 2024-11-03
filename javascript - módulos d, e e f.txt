@@ -168,6 +168,16 @@ function parimp(n){
 
 let res = parimp(11) --> chamada da função
 
+aula 17:
+recaptulando o que aprendeu e dando dica dos próximos passos
+de brinde, explicando objetos:
+para declarar objetos:
+let amigo = { }
+
+vantagem dos objetos em relação aos arrays:
+dar nome às chaves/identificador
+
+let amigo = {nome:'José',sexo:'M',peso:85.4,engordar(p){}}
 
 
 
